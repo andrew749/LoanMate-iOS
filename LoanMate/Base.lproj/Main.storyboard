@@ -22,6 +22,9 @@
                                 <rect key="frame" x="16" y="72" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <segue destination="GYo-Yu-EYM" kind="show" identifier="connectaction" id="Ve8-a4-3dY"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLn-5P-Lwd">
                                 <rect key="frame" x="271" y="110" width="59" height="30"/>
@@ -29,7 +32,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="GYo-Yu-EYM" kind="show" id="vDk-KW-JwB"/>
+                                    <action selector="connectClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4p9-dT-2F3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -45,10 +48,13 @@
                     <navigationItem key="navigationItem" id="D62-7L-zia">
                         <barButtonItem key="rightBarButtonItem" title="+" id="e9M-qO-Vps"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="useridField" destination="ttp-p0-VyW" id="XKh-Ne-So5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1267" y="-384"/>
+            <point key="canvasLocation" x="1237" y="-404"/>
         </scene>
         <!--Results Table View Controller-->
         <scene sceneID="I6x-JT-lbG">

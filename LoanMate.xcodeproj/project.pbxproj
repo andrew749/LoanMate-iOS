@@ -15,6 +15,7 @@
 		B06F31BC1B5A981200F8F0F3 /* LoanMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F31BB1B5A981200F8F0F3 /* LoanMateTests.swift */; };
 		B0D14D981B5AC1310024BBAA /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D14D971B5AC1310024BBAA /* ResultCell.swift */; };
 		B0D14D9A1B5AC2270024BBAA /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D14D991B5AC2270024BBAA /* ResultsTableViewController.swift */; };
+		B0D14D9C1B5AC6650024BBAA /* ConnectedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D14D9B1B5AC6650024BBAA /* ConnectedDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		B06F31BB1B5A981200F8F0F3 /* LoanMateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanMateTests.swift; sourceTree = "<group>"; };
 		B0D14D971B5AC1310024BBAA /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		B0D14D991B5AC2270024BBAA /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		B0D14D9B1B5AC6650024BBAA /* ConnectedDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				B06F31A51B5A981200F8F0F3 /* AppDelegate.swift */,
 				B06F31A71B5A981200F8F0F3 /* ViewController.swift */,
+				B0D14D9B1B5AC6650024BBAA /* ConnectedDelegate.swift */,
 				B0D14D971B5AC1310024BBAA /* ResultCell.swift */,
 				B0D14D991B5AC2270024BBAA /* ResultsTableViewController.swift */,
 				B06F31A91B5A981200F8F0F3 /* Main.storyboard */,
@@ -220,6 +223,7 @@
 			files = (
 				B0D14D9A1B5AC2270024BBAA /* ResultsTableViewController.swift in Sources */,
 				B06F31A81B5A981200F8F0F3 /* ViewController.swift in Sources */,
+				B0D14D9C1B5AC6650024BBAA /* ConnectedDelegate.swift in Sources */,
 				B06F31A61B5A981200F8F0F3 /* AppDelegate.swift in Sources */,
 				B0D14D981B5AC1310024BBAA /* ResultCell.swift in Sources */,
 			);

@@ -19,4 +19,17 @@ class ResultsTableViewController:UIViewController,UITableViewDataSource,UITableV
         var cell = tableView.dequeueReusableCellWithIdentifier("tablecell") as! ResultCell
         return cell
     }
+    func getData(){
+        let url=NSURL(string: "http://loanmate.herokuapp.com/data")
+        let request=NSURLRequest(URL: url!)
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error: NSError!) in
+            if error != nil{
+                let dictionary=NSDictionary()
+                self.didReceiveResponse(dictionary)
+            }
+        })
+    }
+    func didReceiveResponse(data:NSDictionary){
+        print("yes")
+    }
 }
