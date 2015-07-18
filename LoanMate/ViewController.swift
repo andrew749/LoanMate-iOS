@@ -28,7 +28,7 @@ class ViewController: UIViewController, ConnectedDelegate {
 
     func doConnection(loginName:String){
         
-        let url=NSURL(string: "http://loanmate.herokuapp.com/login?username=\(loginName)")
+        let url=NSURL(string: "\(Constants.baseURL())/login?username=\(loginName)")
         let request=NSURLRequest(URL: url!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error: NSError!) in
             if error == nil{
@@ -39,7 +39,7 @@ class ViewController: UIViewController, ConnectedDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "connectaction"{
             if let destination = segue.destinationViewController as? ResultsTableViewController{
-                
+                destination.userID=useridField.text!
             }
         }
     }
