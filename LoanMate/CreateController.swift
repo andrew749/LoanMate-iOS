@@ -11,8 +11,12 @@ import UIKit
 
 class CreateController:UIViewController{
     
+    @IBOutlet weak var cancel: UIToolbar!
     @IBAction func create(sender: AnyObject) {
     }
     @IBOutlet weak var userID: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
+    override func viewDidLoad() {
+    
+    }
 }
