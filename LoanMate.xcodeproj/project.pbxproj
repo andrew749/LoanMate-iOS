@@ -13,6 +13,8 @@
 		B06F31AD1B5A981200F8F0F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06F31AC1B5A981200F8F0F3 /* Images.xcassets */; };
 		B06F31B01B5A981200F8F0F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B06F31AE1B5A981200F8F0F3 /* LaunchScreen.xib */; };
 		B06F31BC1B5A981200F8F0F3 /* LoanMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06F31BB1B5A981200F8F0F3 /* LoanMateTests.swift */; };
+		B0D14D981B5AC1310024BBAA /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D14D971B5AC1310024BBAA /* ResultCell.swift */; };
+		B0D14D9A1B5AC2270024BBAA /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D14D991B5AC2270024BBAA /* ResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		B06F31B51B5A981200F8F0F3 /* LoanMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoanMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06F31BA1B5A981200F8F0F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06F31BB1B5A981200F8F0F3 /* LoanMateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanMateTests.swift; sourceTree = "<group>"; };
+		B0D14D971B5AC1310024BBAA /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		B0D14D991B5AC2270024BBAA /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			children = (
 				B06F31A51B5A981200F8F0F3 /* AppDelegate.swift */,
 				B06F31A71B5A981200F8F0F3 /* ViewController.swift */,
+				B0D14D971B5AC1310024BBAA /* ResultCell.swift */,
+				B0D14D991B5AC2270024BBAA /* ResultsTableViewController.swift */,
 				B06F31A91B5A981200F8F0F3 /* Main.storyboard */,
 				B06F31AC1B5A981200F8F0F3 /* Images.xcassets */,
 				B06F31AE1B5A981200F8F0F3 /* LaunchScreen.xib */,
@@ -212,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D14D9A1B5AC2270024BBAA /* ResultsTableViewController.swift in Sources */,
 				B06F31A81B5A981200F8F0F3 /* ViewController.swift in Sources */,
 				B06F31A61B5A981200F8F0F3 /* AppDelegate.swift in Sources */,
+				B0D14D981B5AC1310024BBAA /* ResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +419,7 @@
 				B06F31C11B5A981300F8F0F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B06F31C21B5A981300F8F0F3 /* Build configuration list for PBXNativeTarget "LoanMateTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +428,7 @@
 				B06F31C41B5A981300F8F0F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
