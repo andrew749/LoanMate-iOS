@@ -11,12 +11,10 @@ import Foundation
 class DataEntry{
     var amount:Double=0
     var description:String?
-    var userID:String?
-    var token:String?
-    init(amount:Double, description:String, userID:String, token:String){
+    var transactionID:String?
+    init(amount:Double, description:String, transactionID:String){
         self.amount=amount
-        self.userID=userID
         self.description=description
-        self.token=token
+        self.transactionID=transactionID
     }
 }

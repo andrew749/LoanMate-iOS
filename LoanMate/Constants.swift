@@ -9,6 +9,7 @@
 import Foundation
 
 class Constants{
+    static var token:String?
     class func  baseURL()->String{
         return "http://7d668776.ngrok.io"
     }

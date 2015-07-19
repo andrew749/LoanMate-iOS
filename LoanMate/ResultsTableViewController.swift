@@ -56,31 +56,43 @@ class ResultsTableViewController:UIViewController,UITableViewDataSource,UITableV
             cell.backgroundColor=UIColor(rgb: 0xdbdbdb)
         }
         cell.descriptionLabel.text=entry.description
-        cell.namelabel.text=entry.userID
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let entry=dataEntries[indexPath.row]
-        braintree = Braintree(clientToken: entry.token)
+        braintree = Braintree(clientToken: Constants.token)
         let controller=UINavigationController(rootViewController: braintree!.dropInViewControllerWithDelegate(self))
         controller.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "dropInViewControllerDidCancel")
         self.presentViewController(controller, animated: true, completion: nil)
         
     }
     func getData(){
-        let url=NSURL(string: "\(Constants.baseURL())/data/userData/\(userID!)")
+        let urlString = "\(Constants.baseURL())/data/userData/\(userID!.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)"
+        let url=NSURL(string: urlString)
         let request=NSURLRequest(URL: url!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error: NSError!) in
             if error == nil{
-                let dictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableLeaves, error: nil) as! NSDictionary
-                self.didReceiveResponse(dictionary)
+                if let dictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableLeaves, error: nil) as? NSDictionary{
+                    self.didReceiveResponse(dictionary)
+                }
             }
         })
     }
     func didReceiveResponse(data:NSDictionary){
-            dispatch_async(dispatch_get_main_queue(), {
-                self.tableView.reloadData()
-            })
+        Constants.token = data["client_token"] as? String
+        for x in data["loans_granted"] as! NSArray{
+            if let amount=x["amount"] as? Double, description = x["description"] as? String, transactionID = x["id"] as? String{
+                self.dataEntries.append(DataEntry(amount: amount, description: description, transactionID: transactionID))
+            }
+        }
+        for x in data["loans_outstanding"] as! NSArray{
+            if let amount=x["amount"] as? Double, description = x["description"] as? String, transactionID = x["id"] as? String{
+                self.dataEntries.append(DataEntry(amount: -amount, description: description, transactionID: transactionID))
+            }
+        }
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+        })
     }
     //MARK: BT
     func dropInViewControllerDidCancel(viewController: BTDropInViewController!) {
