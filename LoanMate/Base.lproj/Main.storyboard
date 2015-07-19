@@ -18,33 +18,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="banana" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttp-p0-VyW">
-                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <rect key="frame" x="16" y="57" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arD-MN-L1i">
+                                <rect key="frame" x="16" y="28" width="86" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="yOR-jJ-oso"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLn-5P-Lwd">
-                                <rect key="frame" x="271" y="66" width="59" height="30"/>
+                                <rect key="frame" x="271" y="95" width="59" height="30"/>
                                 <state key="normal" title="Connect">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="connectClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4p9-dT-2F3"/>
-                                    <segue destination="GYo-Yu-EYM" kind="show" identifier="connectaction" id="SKv-9O-iLl"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ttp-p0-VyW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="M4s-eg-A6U"/>
-                            <constraint firstItem="ttp-p0-VyW" firstAttribute="centerX" secondItem="GLn-5P-Lwd" secondAttribute="centerX" id="acA-iL-MF8"/>
-                            <constraint firstItem="ttp-p0-VyW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="bcs-TW-ODd"/>
-                            <constraint firstItem="GLn-5P-Lwd" firstAttribute="top" secondItem="ttp-p0-VyW" secondAttribute="bottom" constant="8" symbolic="YES" id="jZ9-9i-Gk4"/>
-                            <constraint firstItem="ttp-p0-VyW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="lFN-cH-6AI"/>
+                            <constraint firstItem="ttp-p0-VyW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3tP-FE-o59"/>
+                            <constraint firstItem="arD-MN-L1i" firstAttribute="leading" secondItem="ttp-p0-VyW" secondAttribute="leading" id="EqO-wP-4Xd"/>
+                            <constraint firstItem="ttp-p0-VyW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="LEp-3R-Vfq"/>
+                            <constraint firstItem="GLn-5P-Lwd" firstAttribute="centerX" secondItem="ttp-p0-VyW" secondAttribute="centerX" id="MNQ-aB-ykp"/>
+                            <constraint firstItem="arD-MN-L1i" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Wv9-Ob-8gS"/>
+                            <constraint firstItem="ttp-p0-VyW" firstAttribute="top" secondItem="arD-MN-L1i" secondAttribute="bottom" constant="8" symbolic="YES" id="ap1-so-U0W"/>
+                            <constraint firstItem="GLn-5P-Lwd" firstAttribute="top" secondItem="ttp-p0-VyW" secondAttribute="bottom" constant="8" symbolic="YES" id="w7C-jj-nVK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="D62-7L-zia"/>
                     <connections>
                         <outlet property="useridField" destination="ttp-p0-VyW" id="XKh-Ne-So5"/>
+                        <segue destination="GYo-Yu-EYM" kind="show" identifier="connectaction" id="Ytc-Ug-aWw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

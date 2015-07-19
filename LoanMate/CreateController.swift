@@ -17,13 +17,7 @@ class CreateController:UIViewController{
     @IBAction func create(sender: AnyObject) {
         let url=NSURL(string: "\(Constants.baseURL())/data/requestLoan?username=\(username!.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)&amount=\(userID!.text)")
         let request=NSURLRequest(URL: url!)
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error: NSError!) in
-            if error == nil{
-                if let dictionary = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableLeaves, error: nil) as? NSDictionary{
-                    self.cancelClick(self)
-                }
-            }
-        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error: NSError!) in                     self.dismissViewControllerAnimated(true, completion: nil)
         })
 
     }

@@ -74,25 +74,26 @@ class ResultsTableViewController:UIViewController,UITableViewDataSource,UITableV
     }
     func didReceiveResponse(data:NSDictionary){
         Constants.token = data["client_token"] as? String
-        let lendingBalance:Double = data["lending_balance"] as! Double
-        for x in data["loans_granted"] as! NSArray{
-            if let amount=x["amount"] as? Double, description = x["description"] as? String, transactionID = x["id"] as? Double{
-                self.dataEntries.append(DataEntry(amount: amount, description: description, transactionID: "\(transactionID)"))
+        if let lendingBalance:Double = data["lending_balance"] as? Double{
+            for x in data["loans_granted"] as! NSArray{
+                if let amount=x["amount"] as? Double, description = x["description"] as? String, transactionID = x["id"] as? Double{
+                    self.dataEntries.append(DataEntry(amount: amount, description: description, transactionID: "\(transactionID)"))
+                }
             }
-        }
-        for x in data["loans_outstanding"] as! NSArray{
-            if let amount=x["amount"] as? Double, description = x["description"] as? String, transactionID = x["id"] as? Double{
-                self.dataEntries.append(DataEntry(amount: -amount, description: description, transactionID: "\(transactionID)"))
+            for x in data["loans_outstanding"] as! NSArray{
+                if let amount=x["amount"] as? Double, description = x["description"] as? String, transactionID = x["id"] as? Double{
+                    self.dataEntries.append(DataEntry(amount: -amount, description: description, transactionID: "\(transactionID)"))
+                }
             }
+            for x in dataEntries{
+                sum += x.amount
+            }
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+                self.balanceLabel.text = NSString(format: "%.2f", self.sum) as String
+                self.lendingBalanceLabel.text = NSString(format: "%.2f", lendingBalance) as String
+            })
         }
-        for x in dataEntries{
-            sum += x.amount
-        }
-        dispatch_async(dispatch_get_main_queue(), {
-            self.tableView.reloadData()
-            self.balanceLabel.text = NSString(format: "%.2f", self.sum) as String
-            self.lendingBalanceLabel.text = NSString(format: "%.2f", lendingBalance) as String
-        })
     }
     @IBOutlet weak var lendingBalanceLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
