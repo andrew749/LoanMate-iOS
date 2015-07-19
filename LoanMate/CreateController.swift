@@ -11,7 +11,9 @@ import UIKit
 
 class CreateController:UIViewController{
     
-    @IBOutlet weak var cancel: UIToolbar!
+    @IBAction func cancelClick(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     @IBAction func create(sender: AnyObject) {
     }
     @IBOutlet weak var userID: UITextField!
